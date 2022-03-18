@@ -1,21 +1,23 @@
 <?php
 
 class Database {
-private $host = 'acw2033ndw0at1t7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
-private $db_name = 'r8y2bi4z7seeo5oq';
-private $username = 'r7yi52dsre3so2hn';
-private $password = getenv('db_password');
-private $conn;
+    $url = getenv('JAWSDB_URL');
+    $dbparts = parse_url($url);
+    
+    $hostname = $dbparts['host'];
+    $username = $dbparts['user'];
+    $password = $dbparts['pass'];
+    $database = ltrim($dbparts['path'],'/');
 
 
 public function connect() {
     $this->conn = null;
 
     try {
-        $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->db_name, $this->username, $this->password);
+        $this->conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
         
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+        echo "Connected Successfully";
         
     } catch(PDOException $e) {
         echo 'Connection Error: ' . $e->getMessage();
