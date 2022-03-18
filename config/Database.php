@@ -12,19 +12,19 @@ class Database {
 
 
 public function connect() {
-    $this->conn = null;
+    $conn = null;
 
     try {
-        $this->conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+        $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
         
-        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected Successfully";
         
     } catch(PDOException $e) {
         echo 'Connection Error: ' . $e->getMessage();
     }
 
-    return $this->conn;
+    return $conn;
 
 }
 
