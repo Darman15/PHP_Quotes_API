@@ -2,13 +2,12 @@
 
 class Database {
 
-    $url = getenv('JAWSDB_URL');
-    $dbparts = parse_url($url);
 
-    $hostname = $dbparts['host'];
-    $username = $dbparts['user'];
-    $password = $dbparts['pass'];
-    $database = ltrim($dbparts['path'],'/');
+
+    $hostname = getenv('DB_HOST');
+    $username = getenv('DB_PASSWORD');
+    $password = getenv('DB_NAME');
+    $database = getenv('DB_USER');
     $conn;
 
 
