@@ -1,6 +1,7 @@
 <?php
 
 class Database {
+
     $url = getenv('JAWSDB_URL');
     $dbparts = parse_url($url);
 
@@ -12,7 +13,7 @@ class Database {
 
 
 public function connect() {
-    $conn = null;
+   
 
     try {
         $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
