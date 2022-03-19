@@ -39,7 +39,7 @@ if($num > 0) {
     
     }
 
-    echo json_encode($quote_arr);
+    print_r(json_encode($quote_arr));
     // echo json_encode(
     //     array('message' => 'All quotes are returned')
     // );
