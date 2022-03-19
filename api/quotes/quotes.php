@@ -35,7 +35,7 @@ if($num > 0) {
             'categoryId' => $categoryId
         );
 
-        array_push($quote_arr, $quote_item);
+        array_push($quote_arr['data'], $quote_item);
     
     }
 
