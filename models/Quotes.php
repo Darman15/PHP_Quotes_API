@@ -34,7 +34,7 @@ public function read() {
     // create statements
     
 
-    $stmt = $this->conn->prepare($query);
+    $stmt = $conn->prepare($query);
 
     // execute query
 
