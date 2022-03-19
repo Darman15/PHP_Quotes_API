@@ -26,10 +26,11 @@ class Database {
           echo "Connection failed: " . $e->getMessage();
         }
         // We used this PDO connection format in previous weeks - reference w3schools.com
-      }
 
+        return $this->conn;
+      }
 }
-return $db;
+
 
 
 ?>
