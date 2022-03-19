@@ -15,9 +15,15 @@ $isAnId = filter_input(INPUT_GET, "id");
 // Start of Get all authors redirect logic
  else if ($method == 'GET') {
     include('./authors.php');
-} else if ($method == 'PUT') {
+
+} 
+
+else if ($method == 'PUT') {
     include('./updateAuthor.php');
-} else if ($method == 'DELETE') {
+}
+
+
+else if ($method == 'DELETE') {
     include('./deleteAuthor.php');
 }
 // end of get all authors redirect logic

@@ -4,15 +4,15 @@ class Database {
 
 
 
+  
+
+public function connect() {
+   
     $hostname = getenv('DB_HOST');
     $username = getenv('DB_PASSWORD');
     $password = getenv('DB_NAME');
     $database = getenv('DB_USER');
     $conn;
-
-
-public function connect() {
-   
 
     try {
         $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
