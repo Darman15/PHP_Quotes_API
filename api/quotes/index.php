@@ -9,7 +9,7 @@
     
 
    if(!empty($isAnId) && $method == 'GET') {
-       echo $isAnId;
+     
     include('./quotes_read_single.php');
     }
 
