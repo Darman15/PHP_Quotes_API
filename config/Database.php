@@ -2,10 +2,6 @@
 
 class Database {
 
-
-
-  
-
     public function connect() {
         // if creating a Heroku connection, this is straight from the dev center link: 
         $url = getenv('JAWSDB_URL');

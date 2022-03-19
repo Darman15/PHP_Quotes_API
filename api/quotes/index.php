@@ -41,7 +41,7 @@
 
     
 
-else ($method == 'GET') {
+else if($method == 'GET') {
     include('./quotes.php');
 } 
 
