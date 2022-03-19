@@ -18,12 +18,12 @@
     }
 
     else if (!empty($isAnAuthorId) && $method == 'GET') {
-        echo $isAnAuthorId;
+        
         include('./quoteByAuthorID.php');
     }
 
     else if (!empty($isAnCategoryId) && $method == 'GET') {
-        echo $isAnCategoryId;
+      
         include('./quoteByCategoryId.php');
     }
 
