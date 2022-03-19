@@ -27,9 +27,9 @@ class Database {
         }
         // We used this PDO connection format in previous weeks - reference w3schools.com
       }
-return $conn;
-}
 
+}
+return $conn;
 
 
 ?>
