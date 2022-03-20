@@ -33,7 +33,7 @@ $quote->categoryId = $data->categoryId;
 
 // if(!isset($data->authorId) || empty($data->authorId)) {
 //     echo json_encode(
-//         array('message' => 'authorId not found')
+//         array('message' => 'authorId ot found')
 //     );
 // }
 
@@ -66,9 +66,15 @@ if($quote->create()) {
             'categoryId' => $quote->categoryId)
     );
 
+    if(!isset($data->authorId) || empty($data->authorId)) {
+        echo json_encode(
+            array('message' => 'authorId Not Found')
+        );
+    }
+
  } 
- 
- 
+  
+
  else {
     echo json_encode(
         array('message' => 'quote Not Created')
