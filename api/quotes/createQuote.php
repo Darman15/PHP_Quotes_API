@@ -31,25 +31,25 @@ $quote->categoryId = $data->categoryId;
 
 // Create the post itself 
 
-if(!isset($data->authorId) || empty($data->authorId)) {
-    echo json_encode(
-        array('message' => 'authorId not found')
-    );
-}
+// if(!isset($data->authorId) || empty($data->authorId)) {
+//     echo json_encode(
+//         array('message' => 'authorId not found')
+//     );
+// }
 
 
-else if(!isset($data->categoryId) || empty($data->categoryId)) {
-    echo json_encode(
-        array('message' => 'categoryId Not Found')
-    );
-}
+// else if(!isset($data->categoryId) || empty($data->categoryId)) {
+//     echo json_encode(
+//         array('message' => 'categoryId Not Found')
+//     );
+// }
 
-else if (!isset($data->id) || empty($data->id) || !isset($data->quote) || empty($data->quote)) {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters')
-    );
-    exit();
-}
+// else if (!isset($data->id) || empty($data->id) || !isset($data->quote) || empty($data->quote)) {
+//     echo json_encode(
+//         array('message' => 'Missing Required Parameters')
+//     );
+//     exit();
+// }
 
 
 
@@ -59,10 +59,11 @@ if($quote->create()) {
     echo json_encode(
 
         array(
-        'id' => $db->lastInsertId(),
-        'quote' => $quote->quote,
-        'authorId' => $quote->authorId,
-        'categoryId' => $quote->categoryId)
+
+            'id' => $db->lastInsertId(),
+            'quote' => $quote->quote,
+            'authorId' => $quote->authorId,
+            'categoryId' => $quote->categoryId)
     );
 } else {
     echo json_encode(
