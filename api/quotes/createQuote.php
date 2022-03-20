@@ -31,14 +31,9 @@ $quote->categoryId = $data->categoryId;
 
 // Create the post itself 
 
-// if(!isset($data->authorId) || empty($data->authorId)) {
-//     echo json_encode(
-//         array('message' => 'authorId ot found')
-//     );
-// }
 
 
-// else if(!isset($data->categoryId) || empty($data->categoryId)) {
+//  if(!isset($data->categoryId) || empty($data->categoryId)) {
 //     echo json_encode(
 //         array('message' => 'categoryId Not Found')
 //     );

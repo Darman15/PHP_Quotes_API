@@ -236,12 +236,7 @@ public function create() {
 
     if($stmt->execute()) {
         return true;
-        if(!isset($data->authorId) || empty($data->authorId)) {
-            echo json_encode(
-                array('message' => 'authorId Not Found')
-            );
-            exit();
-        }
+ 
     } 
 
     printf("Error: %s. \n", $stmt->error);

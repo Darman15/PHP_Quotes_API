@@ -32,7 +32,7 @@ $category->category = $data->category;
     );
 } else {
     echo json_encode(
-        array('message' => 'Category Not Created')
+        array('message' => 'Missing Required Parameters')
     );
 }
 
