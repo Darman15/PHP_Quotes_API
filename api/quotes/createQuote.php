@@ -58,8 +58,8 @@ if($quote->create()) {
     
     echo json_encode(
 
-        array(
-        'id' => $quote->id,
+        array('message' => 'created quote ',
+        'id' => $db->lastInsertId(),
         'quote' => $quote->quote,
         'authorId' => $quote->authorId,
         'categoryId' => $quote->categoryId)
