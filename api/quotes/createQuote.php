@@ -58,7 +58,7 @@ if($quote->create()) {
     
     print_r(json_encode(
 
-        array('message' => 'created quote ',
+        array(
         'id' => $quote->id,
         'quote' => $quote->quote,
         'authorId' => $quote->authorId,
