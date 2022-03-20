@@ -18,11 +18,11 @@ $author = new Authors($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
-if(!property_exists($data, "author")) {
-    echo json_encode(
-        array('message' => 'Missing Required Parameters')
-    )
-}
+// if(!property_exists($data, "author")) {
+//     echo json_encode(
+//         array('message' => 'Missing Required Parameters')
+//     )
+// }
 
 else($author->create()) {
     echo json_encode(
