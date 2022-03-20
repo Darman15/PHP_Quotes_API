@@ -70,7 +70,7 @@ if($quote->create()) {
             'categoryId' => $quote->categoryId)
     );
  } 
-  
+   
 
  else {
     echo json_encode(
