@@ -24,7 +24,7 @@ $data = json_decode(file_get_contents("php://input"));
 //     )
 // }
 
-else($author->create()) {
+else($author->create()) { 
     echo json_encode(
         array(
                 'id' => $db->lastInsertId(),
