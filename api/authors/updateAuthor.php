@@ -31,8 +31,7 @@ $author_arr = array (
 
 // update envoked
 if($author->update()) {
-   echo json_encode($author_arr) 
-    );
+  print_r(json_encode($author_arr));
 } else {
     echo json_encode(
         array('message' => 'Author not Updated')
