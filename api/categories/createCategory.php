@@ -27,7 +27,7 @@ $category->category = $data->category;
      
    echo json_encode(
         array('message' => 'Category Created',
-                'id' => $category->id,
+                'id' => $db->lastInsertId(),
                 'category' => $category->category)
     );
 } else {
@@ -35,3 +35,5 @@ $category->category = $data->category;
         array('message' => 'Category Not Created')
     );
 }
+
+?>
