@@ -22,14 +22,13 @@ $author->id = $data->id;
 $author->author = $data->author;
 
 
+
 if($author->create()) {
-    echo(json_encode(
+    echo json_encode(
         array(
                 'id' => $db->lastInsertId(),
-                'author' => $author->author,
-                'authorId' => $authorId->authorId.
-                'categoryId' => $categoryId->categoryId)
-    ));
+                'author' => $author->author)
+    );
 } else {
     echo json_encode(
         array('message' => 'Author Not Created')
