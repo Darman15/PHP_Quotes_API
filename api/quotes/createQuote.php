@@ -69,14 +69,6 @@ if($quote->create()) {
  } 
  
  
- if(!isset($data->authorId) || empty($data->authorId)) {
-    echo json_encode(
-        array('message' => 'authorId not found')
-    );
-}
- 
-
- 
  else {
     echo json_encode(
         array('message' => 'quote Not Created')
