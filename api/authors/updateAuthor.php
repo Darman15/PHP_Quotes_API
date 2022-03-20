@@ -27,15 +27,21 @@ $author->author = $data->author;
 
 
 // update envoked
-if($author->update()) {
-  echo json_encode(
-      array (
-      'id' => $author->id,
-      'author'  => $author->author
-  )
-);
-} else {
-    echo json_encode(
-        array('message' => 'Author not Updated')
+
+if(!property_exists($data, 'id') || !property_exists($data, 'author')) {
+    echo json_encode (
+        array('message' => 'Missing Required Parameters')
     );
+    else {
+        if($author->update()) {
+            echo json_encode(
+                array (
+                'id' => $author->id,
+                'author'  => $author->author
+            )
+          );
+          } 
+    }
 }
+
+
