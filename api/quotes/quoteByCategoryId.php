@@ -34,7 +34,7 @@ echo $num;
         $quote_item = array( 
             
             'quote' => html_entity_decode($quote),
-            'categoryId' => $categoryId,
+            'author' => $author,
             'id' => $id,
             'category' => $category
            
@@ -42,11 +42,9 @@ echo $num;
 
         array_push($quote_arr, $quote_item);
  }
- echo json_encode($quote_arr);
-    echo json_encode(
-        array('message' => 'All quotes in categoryId=' . $categoryId)
-    );
-} else {
+print_r(json_encode($quote_arr));
+ 
+ else {
     echo json_encode(
         array('message' => 'No quotes found')
     );
