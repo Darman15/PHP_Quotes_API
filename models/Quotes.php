@@ -99,15 +99,19 @@ public function read_single() {
 public function getQuotesByAuthorID() {
     
     $query = 'SELECT 
+     q.id,
     q.quote,
-    q.authorId,
-    a.id,
-    a.author
-    FROM
+    a.author,
+    c.category
+    From
     ' . $this->table . ' q
-   LEFT JOIN authors a ON  
-   q.authorId = a.id
-    WHERE
+    LEFT JOIN authors a 
+    ON
+    q.authorId = a.id
+    LEFT JOIN category c
+    ON
+    q.categoryId = c.id
+    WHERE 
     q.authorId = :authorId';
 
     // prepare
