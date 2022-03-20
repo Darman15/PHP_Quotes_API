@@ -68,13 +68,12 @@ public function read_single() {
     ON
     q.categoryId = c.id
     WHERE 
-    id = ?
-    LIMIT 0,1';
+    q.id = :id';
 
     // prepare the statment
     $stmt = $this->conn->prepare($query);
 
-    $stmt->bindParam(1, $this->id);
+    $stmt->bindParam(':id', $this->id);
 
     // execute query
 
@@ -86,8 +85,8 @@ public function read_single() {
 
     $this->id = $row['id'];
     $this->quote = $row['quote'];
-    $this->authorId = $row['authorId'];
-    $this->categoryId = $row['categoryId'];
+    $this->author = $row['author'];
+    $this->category = $row['category'];
 }
 
 // end of single quote by id logic
