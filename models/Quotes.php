@@ -174,10 +174,13 @@ public function getQuotesByCategoryId() {
 public function getQuotesByAuthorIdAndCategoryId() {
     
     $query = 'SELECT 
-    q.id,
+    q.id
     q.quote,
-    a.author,
+    q.author,
+    q.categoryId,
+    a.id,
     c.category,
+    c.id
     FROM
     ' . $this->table . ' q
    LEFT JOIN authors a 
