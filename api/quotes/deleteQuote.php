@@ -21,15 +21,16 @@ $quote = new Quotes($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
+$quote->delete();
+
 $quote->id = $data->id;
 // delete the post itself 
 
 
 
 
-if($quote->delete()) {
+if($quote->id !== null) {
     echo json_encode(
-
         array('id' =>  $quote->id));
 } 
 else {
