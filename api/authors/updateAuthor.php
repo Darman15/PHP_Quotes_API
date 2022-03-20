@@ -28,7 +28,9 @@ $author->author = $data->author;
 // update envoked
 if($author->update()) {
     echo json_encode(
-        array('message' => 'Author Updated is is ' . $author->id . ' author name is ' . $author->author)
+        array(
+            'id' => $id->id,
+            'author'=> $author->author)
     );
 } else {
     echo json_encode(
