@@ -24,14 +24,15 @@ $data = json_decode(file_get_contents("php://input"));
 $author->id = $data->id;
 $author->author = $data->author;
 
-$author_arr = array (
-    'id' => $author->id,
-    'author' => $author->author
-);
+
 
 // update envoked
 if($author->update()) {
-  print_r(json_encode($author_arr));
+  echo json_encode(
+      array (
+        'id' => $db->lastInsertId(),
+        'author' => $author->author)
+    );
 } else {
     echo json_encode(
         array('message' => 'Author not Updated')
