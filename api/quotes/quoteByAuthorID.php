@@ -42,10 +42,8 @@ echo $num;
 
         array_push($quote_arr['data'], $quote_item);
  }
- echo json_encode($quote_arr);
-    echo json_encode(
-        array('message' => 'All quotes from authorId =' . $authorId )
-    );
+ print_r(json_encode($quote_arr));
+
 } else {
     echo json_encode(
         array('message' => 'No quotes found')
