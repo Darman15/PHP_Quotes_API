@@ -23,7 +23,7 @@ $category_arr = array (
 );
 
 if($category->id !== null) {
-    print_r(json_encode($category_arr));
+    echo (json_encode($category_arr));
     } 
     else {
         echo json_encode(
