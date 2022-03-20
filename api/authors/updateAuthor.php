@@ -3,8 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: PUT');
-header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, 
-Authorization, X-Requested-With');
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
 include_once '../../config/Database.php';
 include_once '../../models/Authors.php';
@@ -27,10 +26,10 @@ $author->author = $data->author;
 
 // update envoked
 if($author->update()) {
-   print_r(json_encode(
+   echo json_encode(
         array('id' => $author->id,
             'author' => $author->author) 
-    ));
+    );
 } else {
     echo json_encode(
         array('message' => 'Author not Updated')
