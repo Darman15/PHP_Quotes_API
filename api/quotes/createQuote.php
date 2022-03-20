@@ -52,6 +52,11 @@ $quote->categoryId = $data->categoryId;
 // }
 
 
+if(!isset($data->authorId) || empty($data->authorId)) {
+    echo json_encode(
+        array('message' => 'authorId Not Found')
+    );
+}
 
 
 if($quote->create()) {
@@ -65,13 +70,6 @@ if($quote->create()) {
             'authorId' => $quote->authorId,
             'categoryId' => $quote->categoryId)
     );
-
-    if(!isset($data->authorId) || empty($data->authorId)) {
-        echo json_encode(
-            array('message' => 'authorId Not Found')
-        );
-    }
-
  } 
   
 
