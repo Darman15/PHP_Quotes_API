@@ -23,36 +23,36 @@ $author->id = $data->id;
 $author->author = $data->author;
 
 
-// if($author->create()) {
-//     print_r(json_encode(
-//         array(
-//                 'id' => $author->id,
-//                 'author' => $author->author)
-//     ));
-// } else {
-//     echo json_encode(
-//         array('message' => 'Author Not Created')
-//     );
-// }
-
-
 if($author->create()) {
-  $author_arr = array();
-
-  $author_item = array (
-      'id' => $id,
-      'author' => $author
-  );
-
-  array_push($author_arr, $author_item);
-
-  print_r(json_encode($author_arr));
-  
+    print_r(json_encode(
+        array(
+                'id' => $author->id,
+                'author' => $author->author)
+    ));
 } else {
     echo json_encode(
         array('message' => 'Author Not Created')
     );
 }
+
+
+// if($author->create()) {
+//   $author_arr = array();
+
+//   $author_item = array (
+//       'id' => $id,
+//       'author' => $author
+//   );
+
+//   array_push($author_arr, $author_item);
+
+//   print_r(json_encode($author_arr));
+
+// } else {
+//     echo json_encode(
+//         array('message' => 'Author Not Created')
+//     );
+// }
 
 
 ?>
