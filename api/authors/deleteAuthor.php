@@ -26,7 +26,7 @@ $author->id = $data->id;
 // delete envoked
 if($author->delete()) {
     echo json_encode(
-        array('message' => 'Author deleted id is ' . $author->id )
+        array('id' => $author->id )
     );
 } else {
     echo json_encode(
