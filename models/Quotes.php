@@ -24,12 +24,19 @@ public function __construct($db) {
 // start of get all quotes
 public function read() {
     $query = 'SELECT
-    id,
-    quote,
-    authorId,
-    categoryId
+    q.id,
+    q.quote,
+    a.author,
+    c.category
     From
-    ' . $this->table;
+    ' . $this->table . ' q
+    LEFT JOIN authors a 
+    ON
+    q.authorId = a.id
+    LEFT JOIN category c
+    ON
+    q.categoryId = c.id';
+    
 
     // create statements
     
