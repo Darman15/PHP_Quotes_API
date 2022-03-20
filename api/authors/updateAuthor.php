@@ -28,9 +28,8 @@ $author->author = $data->author;
 // update envoked
 if($author->update()) {
     echo json_encode(
-        array(
-             $author->id
-            $author->author) 
+        array('id' => $author->id,
+            'author' => $author->author)
     );
 } else {
     echo json_encode(
