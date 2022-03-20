@@ -4,11 +4,8 @@ class Categories {
 
     private $conn;
     private $table = 'category';
-
-
     public $id;
     public $category;
-
 
     public function __construct($db) {
         $this->conn = $db;
