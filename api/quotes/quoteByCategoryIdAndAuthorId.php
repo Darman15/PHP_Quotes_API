@@ -24,7 +24,7 @@ $quote->authorId = isset($_GET['authorId']) ? $_GET['authorId'] : die();
 $result = $quote->getQuotesByAuthorIdAndCategoryId();
 
 $num = $result->rowCount();
-echo $num;
+
 
  if($num > 0) {
     $quote_arr = array();
