@@ -31,17 +31,14 @@ $author->author = $data->author;
 if(!property_exists($data, 'id') || !property_exists($data, 'author')) {
     echo json_encode (
         array('message' => 'Missing Required Parameters')
-    );
-    else {
-        if($author->update()) {
-            echo json_encode(
-                array (
-                'id' => $author->id,
-                'author'  => $author->author
-            )
-          );
-          } 
-    }
+    )
 }
 
-
+else ($author->update()) {
+  echo json_encode(
+      array (
+      'id' => $author->id,
+      'author'  => $author->author
+  )
+);
+}
