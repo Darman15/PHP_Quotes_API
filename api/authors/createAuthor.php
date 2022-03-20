@@ -26,7 +26,9 @@ if($author->create()) {
     echo(json_encode(
         array(
                 'id' => $db->lastInsertId(),
-                'author' => $author->author)
+                'author' => $author->author,
+                'authorId' => $authorId->authorId.
+                'categoryId' => $categoryId->categoryId)
     ));
 } else {
     echo json_encode(
