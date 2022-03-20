@@ -55,12 +55,18 @@ $stmt->execute();
 // To read a single quote
 public function read_single() {
     $query = 'SELECT
-    id,
-    quote,
-    authorId,
-    categoryId
+    q.id,
+    q.quote,
+    a.author,
+    c.category
     From
-    ' . $this->table . '
+    ' . $this->table . ' q
+    LEFT JOIN authors a 
+    ON
+    q.authorId = a.id
+    LEFT JOIN category c
+    ON
+    q.categoryId = c.id
     WHERE 
     id = ?
     LIMIT 0,1';
