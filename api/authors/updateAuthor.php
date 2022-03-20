@@ -33,6 +33,6 @@ if($author->update()) {
     );
 } else {
     echo json_encode(
-        array('message' => 'Author not Updated')
+        array('message' => 'Author not Updated') 
     );
 }
