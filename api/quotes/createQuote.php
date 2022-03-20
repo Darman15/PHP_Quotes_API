@@ -56,14 +56,14 @@ else if (!isset($data->id) || empty($data->id) || !isset($data->quote) || empty(
 
 if($quote->create()) {
     
-    echo json_encode(
+    print_r(json_encode(
 
         array('message' => 'created quote ',
         'id' => $quote->id,
         'quote' => $quote->quote,
         'authorId' => $quote->authorId,
         'categoryId' => $quote->categoryId)
-    );
+    ));
 } else {
     echo json_encode(
         array('message' => 'quote Not Created')
