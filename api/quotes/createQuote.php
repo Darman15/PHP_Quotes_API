@@ -38,13 +38,7 @@ $quote->categoryId = $data->categoryId;
 //     );
 // }
 
-// else if (!isset($data->id) || empty($data->id) || !isset($data->quote) || empty($data->quote)) {
-//     echo json_encode(
-//         array('message' => 'Missing Required Parameters')
-//     );
-//     exit();
-// }
- 
+
 
 // if(!isset($data->authorId) || empty($data->authorId)) {
 //     echo json_encode(
@@ -54,12 +48,7 @@ $quote->categoryId = $data->categoryId;
 
 
 if($quote->create()) {
-    if(!isset($data->authorId) || empty($data->authorId)) {
-    echo json_encode(
-        array('message' => 'authorId Not Found')
-    );
-    exit();
-}
+
     echo json_encode(
 
         array(
