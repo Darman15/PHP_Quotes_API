@@ -34,10 +34,8 @@ if($num > 0) {
     
     }
 
-    echo json_encode($category_arr);
-    echo json_encode(
-        array('message' => 'All categories with their ids')
-    );
+    print_r(json_encode($category_arr));
+
 } else {
     echo json_encode(
         array('message' => 'No categories found')
