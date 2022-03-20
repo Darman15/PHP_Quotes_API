@@ -31,8 +31,8 @@ if($num > 0) {
         $quote_item = array( 
             'id' => $id,
             'quote' => html_entity_decode($quote),
-            'authorId' => $authorId,
-            'categoryId' => $categoryId
+            'author' => $author,
+            'category' => $category
         );
 
         array_push($quote_arr, $quote_item);
