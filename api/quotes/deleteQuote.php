@@ -32,7 +32,7 @@ if($quote->delete()) {
     echo json_encode(
        
 
-        array('message' => 'deleted ' . $quote->id)
+        array('id' =>  $quote->id)
     );
 } else {
     echo json_encode(
