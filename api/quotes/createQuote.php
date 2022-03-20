@@ -54,7 +54,12 @@ $quote->categoryId = $data->categoryId;
 
 
 if($quote->create()) {
-    
+    if(!isset($data->authorId) || empty($data->authorId)) {
+    echo json_encode(
+        array('message' => 'authorId Not Found')
+    );
+    exit();
+}
     echo json_encode(
 
         array(
