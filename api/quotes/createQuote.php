@@ -50,7 +50,7 @@ $quote->categoryId = $data->categoryId;
 //     );
 //     exit();
 // }
-
+ 
 
 if(!isset($data->authorId) || empty($data->authorId)) {
     echo json_encode(
