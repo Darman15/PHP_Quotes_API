@@ -25,7 +25,7 @@ $author->author = $data->author;
 
 if($author->create()) {
     echo json_encode(
-        array(
+        array('message' => 'Category Created',
                 'id' => $db->lastInsertId(),
                 'author' => $author->author)
     );
@@ -35,24 +35,6 @@ if($author->create()) {
     );
 }
 
-
-// if($author->create()) {
-//   $author_arr = array();
-
-//   $author_item = array (
-//       'id' => $id,
-//       'author' => $author
-//   );
-
-//   array_push($author_arr, $author_item);
-
-//   print_r(json_encode($author_arr));
-
-// } else {
-//     echo json_encode(
-//         array('message' => 'Author Not Created')
-//     );
-// }
 
 
 ?>
