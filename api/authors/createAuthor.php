@@ -25,7 +25,7 @@ $author->author = $data->author;
 if($author->create()) {
     print_r(json_encode(
         array(
-                'id' => $author->lastInsertId(),
+                'id' => $author->id,
                 'author' => $author->author)
     ));
 } else {
