@@ -2,13 +2,11 @@
 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Methods: PUT');
-header('Access-Control-Allow-Methods: DELETE');
-header('Access-Control-Allow-Headers: Access-Control-Allow-Origin,Content-Type, Access-Control-Allow-Methods,Authorization, X-Requested-With');
-
-// set the request method to a variable to use for redirect logic
 $method = $_SERVER['REQUEST_METHOD'];
+if ($method === 'OPTIONS') {
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+    header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
+}
 
 $isAnId = filter_input(INPUT_GET, "id");
 
