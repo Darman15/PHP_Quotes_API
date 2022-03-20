@@ -20,7 +20,8 @@ $category->category = $data->category;
 
 if($category->update()){
     echo json_encode(
-        array('message' => 'category updated id is ' . $category->id . ' category is ' . $category->category)
+        array('id' => $category->id
+              'category' => $category->category)
     );
 } else {
     echo json_encode(
