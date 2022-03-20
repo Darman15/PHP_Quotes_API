@@ -32,7 +32,7 @@ if($quote->delete()) {
 
         array('id' =>  $quote->id));
 } 
-else if (!isset($quote->id) || empty($quote->id)){
+else {
     echo json_encode(
         array('message' => 'No Quotes Found') 
     );
