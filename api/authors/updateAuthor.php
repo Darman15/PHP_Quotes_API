@@ -28,11 +28,11 @@ $author->author = $data->author;
 // update envoked
 if($author->update()) {
     echo json_encode(
-        array('id' => $id,
-            'author' => $author)
+        array('id' => $author->id,
+            'author' => $author->author)
     );
 } else {
     echo json_encode(
-        array('message' => 'Author not Updated') 
+        array('message' => 'Author not Updated')
     );
 }
