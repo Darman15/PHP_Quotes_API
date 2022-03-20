@@ -35,7 +35,7 @@ $num = $result->rowCount();
 
         $quote_item = array( 
             
-            'id' => $id
+            'id' => $id,
             'quote' => html_entity_decode($quote),
             'author' => $author,
             'category' => $category
