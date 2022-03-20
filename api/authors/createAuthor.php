@@ -25,7 +25,7 @@ $author->author = $data->author;
 
 if($author->create()) {
     echo json_encode(
-        array('message' => 'Category Created',
+        array(
                 'id' => $db->lastInsertId(),
                 'author' => $author->author)
     );
