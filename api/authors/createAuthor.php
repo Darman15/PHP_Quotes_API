@@ -33,8 +33,7 @@ if($author->create()) {
     echo json_encode(
         array('message' => 'Author Not Created')
     );
-}
-
+} 
 
 
 ?>
