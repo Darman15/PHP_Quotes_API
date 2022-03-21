@@ -23,7 +23,7 @@ if(!property_exists($data, "author")) {
     missingParams();
 
 } else {
-    $author->author = $data->author;
+    
     if($author->create()) { 
     echo json_encode(
         array(
