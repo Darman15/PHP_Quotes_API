@@ -3,8 +3,8 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-include_once '../../checkingFunctions/fail.php';
-include_once '../../checkingFunctions/missingReqParams.php';
+include_once '../checkingFunctions/fail.php';
+include_once '../checkingFunctions/missingReqParams.php';
 
 
 $method = $_SERVER['REQUEST_METHOD'];
