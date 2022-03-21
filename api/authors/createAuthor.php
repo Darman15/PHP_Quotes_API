@@ -19,10 +19,10 @@ $author = new Authors($db);
 $data = json_decode(file_get_contents("php://input"));
 
 
-if(!property_exists($data, $author->author)) {
-    missingParams();
+// if(!property_exists($data, $author->author)) {
+//     missingParams();
 
-}
+// }
 
 if($author->create()) { 
     echo json_encode(
