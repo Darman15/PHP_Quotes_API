@@ -18,19 +18,24 @@ $author = new Authors($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
-// if(!property_exists($data, "author")) {
-//     echo json_encode(
-//         array('message' => 'Missing Required Parameters')
-//     )
-// }
+// if property does not exist display missing required parameters
+if(!property_exists($data, "author")) {
+    missingParams();
 
-if($author->create()) { 
+} else {
+    $author->author = $data->author;
+    if($author->create()) { 
     echo json_encode(
         array(
                 'id' => $db->lastInsertId(),
                 'author' => $author->author)
     );
-} 
+}  else {
+    fail("Author", "Created")
+    }
+}
+
+exit();
 
 
 ?>

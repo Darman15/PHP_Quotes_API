@@ -2,6 +2,11 @@
 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
+
+include_once '../../checkingFunctions/fail.php';
+include_once '../../checkingFunctions/missingParams.php';
+
+
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method === 'OPTIONS') {
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
