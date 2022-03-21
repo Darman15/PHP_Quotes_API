@@ -19,7 +19,7 @@ $author = new Authors($db);
 $data = json_decode(file_get_contents("php://input"));
 
 
-if(!property_exists($data, "author")) {
+if(!property_exists($data, $author->author)) {
     missingParams();
 
 }
